@@ -51,10 +51,3 @@ def plot_graph():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-
-
-        # ... (rest of the code for plotting the graph)
-
-
