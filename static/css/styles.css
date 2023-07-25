@@ -1,0 +1,15 @@
+/* styles.css */
+@import 'https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19';
+
+/* Customize Tailwind CSS as needed */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.plot-container img {
+    max-width: 100%;
+    display: block;
+    margin-top: 20px;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>A*sin(wt - kx) Graph Plotter</title>
+    <link href="/static/css/styles.css" rel="stylesheet">
+    <!-- Add Tailwind CSS link -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-8 max-w-lg">
+        <h1 class="text-3xl font-bold mb-6">Graph Plotter</h1>
+        <form action="/plot" method="post" class="mb-8">
+            <label for="A" class="block mb-2">A (Amplitude):</label>
+            <input type="text" name="A" id="A" required class="border p-2 mb-4 w-full"><br>
+            <label for="w" class="block mb-2">w (Frequency):</label>
+            <input type="text" name="w" id="w" required class="border p-2 mb-4 w-full"><br>
+            <label for="t" class="block mb-2">t (Time):</label>
+            <input type="text" name="t" id="t" required class="border p-2 mb-4 w-full"><br>
+            <label for="k" class="block mb-2">k (Wave Number):</label>
+            <input type="text" name="k" id="k" required class="border p-2 mb-4 w-full"><br>
+            <label for="x" class="block mb-2">x (Position):</label>
+            <input type="text" name="x" id="x" required class="border p-2 mb-4 w-full"><br>
+            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Plot Graph
+            </button>
+        </form>
+
+        {% if plot_data %}
+        <div class="plot-container">
+            <img src="data:image/png;base64,{{ plot_data }}" alt="Graph">
+        </div>
+        {% endif %}
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
